@@ -1,24 +1,7 @@
-class FileFinder {
-  static Future<List<String>> find(String path, List<String> filemasks,
-      [bool searchForFiles = true, bool searchForDirs = false,
-      bool recursive = false, bool ignoreCase]) {
+#library('file_finder');
 
-    var dir = new Directory(new Path(path).toNativePath());
-    var lister = new FilteredDirectoryLister(dir, filemasks, recursive,
-        ignoreCase);
+#import('dart:io');
+#import('dart:math');
 
-    var results = [];
-    if(searchForFiles) {
-      lister.onFile = (file) => results.add(file);
-    }
-
-    if(searchForDirs) {
-      lister.onDir = (dir) => results.add(dir);
-    }
-
-    var completer = new Completer<List<String>>();
-    lister.onDone = (_) => completer.complete(results);
-
-    return completer.future;
-  }
-}
+#source('src/file_finder.dart');
+#source('src/filtered_directory_lister.dart');

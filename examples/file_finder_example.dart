@@ -1,5 +1,7 @@
+#library('file_finder_example.dart');
+
 #import('dart:io');
-#import('../file_finder.dart');
+#import('../lib/file_finder.dart');
 
 main() {
   if(Platform.operatingSystem == 'windows') {
