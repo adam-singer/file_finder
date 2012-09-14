@@ -1,4 +1,4 @@
 name: file_finder
 version: 0.1.0
 description: >
-Library for searching files by wildcards.
+  Library for searching files by wildcards.
